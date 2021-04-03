@@ -1,0 +1,5 @@
+name: RamWasterReborn
+version: @version@
+main: de.notmyfault.ramwasterreborn.RamWasterRebornPlugin
+api-version: 1.16
+authors: [ NotMyFault ]
