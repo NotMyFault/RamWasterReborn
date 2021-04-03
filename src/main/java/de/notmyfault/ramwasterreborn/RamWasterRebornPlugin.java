@@ -13,7 +13,7 @@ public class RamWasterRebornPlugin extends JavaPlugin {
             byte[] bytes = new byte[1048576];
             vector.add(bytes);
             Runtime runtime = Runtime.getRuntime();
-            getLogger().info("Eating ram, nom nom nom; memory left: " + runtime.freeMemory());
+            getLogger().info("Eating ram, nom nom nom; memory left: " + runtime.freeMemory() / 1000 / 1000 + "MB");
         }
     }
 
