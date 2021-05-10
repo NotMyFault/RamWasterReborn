@@ -8,12 +8,16 @@ public class RamWasterRebornPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Vector vector = new Vector<>();
+        Vector<byte[]> vector = new Vector<>();
         while (true) {
-            byte[] bytes = new byte[1048576];
-            vector.add(bytes);
-            Runtime runtime = Runtime.getRuntime();
-            getLogger().info("Eating ram, nom nom nom; memory left: " + runtime.freeMemory() / 1000 / 1000 + "MB");
+            try {
+                byte[] bytes = new byte[1048576];
+                vector.add(bytes);
+                Runtime runtime = Runtime.getRuntime();
+                getLogger().info("Eating ram, nom nom nom; memory left: " + runtime.freeMemory() / 1000 / 1000 + "MB.");
+            } catch (OutOfMemoryError e) {
+                System.out.println("Job complete.");
+            }
         }
     }
 
